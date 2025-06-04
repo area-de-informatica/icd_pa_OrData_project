@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Orange Data Mining</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Examen de Orange Data Mining</h1>
+        </header>
+
+        <!-- Sección de prueba diagnóstica -->
+        <section id="diagnostic-section">
+            <h2>Prueba Diagnóstica</h2>
+            <p>Responde las siguientes preguntas para determinar tu nivel:</p>
+            <div id="diagnostic-questions"></div>
+            <button id="submit-diagnostic" onclick="evaluateDiagnostic()">Evaluar</button>
+        </section>
+
+        <!-- Mensaje de retroalimentación para el diagnóstico -->
+        <section id="diagnostic-result" style="display: none;">
+            <h2 id="diagnostic-message"></h2>
+            <button onclick="startLevel()">Empezar Examen</button>
+        </section>
+
+        <!-- Sección de preguntas del examen -->
+        <section id="question-container" style="display: none;"></section>
+
+        <!-- Mensaje de retroalimentación -->
+        <div id="feedback-container" style="display: none;">
+            <p id="feedback-message"></p>
+            <button id="next-button" onclick="nextQuestion()" style="display: none;">Siguiente</button>
+            <button id="retry-button" onclick="retryQuestion()" style="display: none;">Volver a Intentar</button>
+        </div>
+
+        <footer>
+            <p>Creado por Andreina Ojeda, Keimer Muñoz Mora, Luis Carlos Suárez Bravo</p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
