@@ -43,7 +43,7 @@ const diagnosticQuestions = [
 
 let responses = {};
 let currentLevel = ""; // Esto almacenará el nivel determinado
-let currentQuestionIndex = 0;
+let currentQuestionIndex = 0; // Índice de la pregunta actual
 
 // Respuestas correctas para cada pregunta (índice 0 basado en el array)
 const correctAnswers = [
@@ -233,9 +233,6 @@ function getQuestionsForLevel(level) {
 }
 
 function checkAnswer(selectedOption, questionIndex) {
-  // const question = questions[currentLevel][questionIndex]; // Error in index currentLevel, questions[currentLevel] grt unfefined.
-  // replaced by questions[questionIndex] in line 239.
-
   const question = questions[questionIndex];
   const feedbackContainer = document.getElementById("feedback-container");
   const nextButton = document.getElementById("next-button");
@@ -264,18 +261,18 @@ function checkAnswer(selectedOption, questionIndex) {
 }
 
 function nextQuestion() {
-  currentQuestionIndex++;
+  currentQuestionIndex++; // Incrementar el índice de la pregunta
   if (currentQuestionIndex < questions[currentLevel].length) {
-    loadExamQuestions(currentLevel);
-    document.getElementById("feedback-container").style.display = "none";
+    loadExamQuestions(currentLevel); // Cargar la siguiente pregunta
+    document.getElementById("feedback-container").style.display = "none"; // Ocultar retroalimentación
   } else {
-    alert("Has completado el examen!");
+    alert("¡Has completado el examen!");
   }
 }
 
 function retryQuestion() {
-  loadExamQuestions(currentLevel);
-  document.getElementById("feedback-container").style.display = "none";
+  loadExamQuestions(currentLevel); // Recargar la pregunta actual
+  document.getElementById("feedback-container").style.display = "none"; // Ocultar retroalimentación
 }
 
 // Cargar las preguntas diagnósticas al cargar la página
